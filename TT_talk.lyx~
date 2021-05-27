@@ -1,0 +1,3739 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usetheme{Warsaw}
+% or ...
+
+\setbeamercovered{transparent}
+% or whatever (possibly just delete it)
+
+\usepackage{graphicx}
+\usepackage{epsfig} 
+\usepackage{bm} 
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{array}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman times
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This is a fix to the problem where the figures are not numbered throughout
+ the talk! MMWWWAAA!!! Internets FTW!
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setbeamertemplate{caption}[numbered]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%% Because html converters don't know tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+providecommand{
+\backslash
+tabularnewline}{
+\backslash
+
+\backslash
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This file is a solution template for:
+\end_layout
+
+\begin_layout Plain Layout
+- Talk at a conference/colloquium.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- Talk length is about 20min.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- Style is ornate.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+In principle, this file can be redistributed and/or modified under the terms
+ of the GNU Public License, version 2.
+ However, this file is supposed to be a template to be modified for your
+ own needs.
+ For this reason, if you use this file as a template and not specifically
+ distribute it as part of a another package/program, the author grants the
+ extra permission to freely copy and modify this file as you see fit and
+ even to delete this copyright notice.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Review of Spectral Tensor-Train Decomposition
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Rev.
+ of Spec.
+ Tensor-Train Decomp.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+optional, use only with long paper titles
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Matthew
+\begin_inset space ~
+\end_inset
+
+Reynolds
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+inst{1}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+- Give the names in the same order as the appear in the paper.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- Use the 
+\backslash
+inst{?} command only if the authors have different affiliations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+inst{1}
+\end_layout
+
+\end_inset
+
+Department of Aerospace Engineering Sciences, CU Boulder
+\end_layout
+
+\begin_layout Date
+University of Colorado
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+- Use the 
+\backslash
+inst command only if there are several affiliations.
+\end_layout
+
+\begin_layout Plain Layout
+- Keep it simple, no one is interested in your street address.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+UQ Group meeting
+\begin_inset Newline newline
+\end_inset
+
+Oct 24th, 2016
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+- Either use conference name or its abbreviation.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- Not really informative to the audience, more for people (including yourself)
+ who are reading the slides online
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+optional, should be abbreviation of conference name
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+If you have a file called "institution-logo-filename.xxx", where xxx is a
+ graphic format that can be processed by latex or pdflatex, resp., then you
+ can add a logo by uncommenting the following:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pgfdeclareimage[height=0.5cm]{institution-logo}{institution-logo-filename}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+logo{
+\backslash
+pgfuseimage{institution-logo}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The following causes the table of contents to be shown at the beginning
+ of every subsection.
+ Delete this, if you do not want it.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+AtBeginSubsection[]{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+frame<beamer>{ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+frametitle{Outline}   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+tableofcontents[currentsection,currentsubsection]
+\end_layout
+
+\begin_layout Plain Layout
+
+	%
+\backslash
+tableofcontents[hideallsubsections,currentsection]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+If you wish to uncover everything in a step-wise fashion, uncomment the
+ following command:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beamerdefaultoverlayspecification{<+->}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{tocdepth}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Outline
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Structuring a talk is a difficult task and the following structure may not
+ be suitable.
+ Here are some rules that apply for this solution: 
+\end_layout
+
+\begin_layout Plain Layout
+- Exactly two or three sections (other than the summary).
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- At *most* three subsections per section.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- Talk about 30s to 2min per frame.
+ So there should be between about 15 and 30 frames, all told.
+\end_layout
+
+\begin_layout Plain Layout
+- A conference audience is likely to know very little of what you are going
+ to talk about.
+ So *simplify*! 
+\end_layout
+
+\begin_layout Plain Layout
+- In a 20min talk, getting the main ideas across is hard enough.
+ Leave out details, even if it means being less precise than you think necessary.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+- If you omit details that are vital to the proof/implementation, just say
+ so once.
+ Everybody will be happy with that.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontents[   currentsection,   sectionstyle=show/show,   subsectionstyle=s
+how/shaded/hide ]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Introduction to separated representations
+\end_layout
+
+\begin_layout Subsection
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Separated representations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Assume we have 
+\begin_inset Formula $f$
+\end_inset
+
+ (say in 
+\begin_inset Formula $L^{2}\left(\left[a,b\right]^{d}\right)$
+\end_inset
+
+) that we want to approximate.
+ A straightforward method of approximating this function is to use tensor
+ product basis functions (e.g.
+ a Fourier series),
+\begin_inset Formula 
+\[
+f\left(z_{1},z_{2},\dots z_{d}\right)\simeq\sum_{i_{1}=1}^{N_{1}}\dots\sum_{i_{d}=1}^{N_{d}}c_{i_{1},\dots,i_{d}}\phi_{i_{1}}\left(z_{1}\right)\phi_{i_{2}}\left(z_{j}\right)\dots\phi_{i_{d}}\left(z_{d}\right).
+\]
+
+\end_inset
+
+Bad idea! The number of coefficients 
+\begin_inset Formula $c_{i_{1}\dots i_{d}}$
+\end_inset
+
+ grows exponentially w.r.t 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ This is the 
+\color red
+Curse of Dimensionality
+\color inherit
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Separated representations continued
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+To mitigate computational difficulties associated with the curse of dimensionali
+ty, we work with functions with special 
+\emph on
+structures.
+\end_layout
+
+\begin_layout Itemize
+One such structure is that the function of interest admits a separated represent
+ation, 
+\begin_inset Formula 
+\[
+f\left(z_{1},z_{2},\dots z_{d}\right)\simeq\sum_{l=1}^{r}\sigma_{l}\phi_{1}^{l}\left(z_{1}\right)\phi_{2}^{l}\left(z_{2}\right)\cdots\phi_{d}^{l}\left(z_{d}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+The number of terms, 
+\begin_inset Formula $r$
+\end_inset
+
+, is called the separation rank is assumed to be 
+\emph on
+small
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+Given a separated representation,
+\begin_inset Formula 
+\[
+u\left(z_{1},z_{2},\dots z_{d}\right)=\sum_{l=1}^{r}\sigma_{l}u_{1}^{l}\left(z_{1}\right)u_{2}^{l}\left(z_{2}\right)\cdots u_{d}^{l}\left(z_{d}\right),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Canonical tensor decomposition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+any discretization of 
+\begin_inset Formula $u_{j}^{l}\left(z_{j}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $\mathbf{U}_{j}^{l}=\left\{ u_{j}^{l}\left(z_{i_{j}}\right)\right\} _{i_{j}=1}^{N_{j}}$
+\end_inset
+
+, and 
+\begin_inset Formula $j=1,\dots,d$
+\end_inset
+
+, leads to a Canonical Tensor Decomposition, or CTD,
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim = 60mm 80mm 60mm 60mm, clip, width = 2.5in]{figures/cp_U.pdf}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-238,55){${
+\backslash
+color{blue}d=3:}$} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-150,54){$
+\backslash
+approx$} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-138,54){$s_1$} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-60,54){$s_{r_U}$} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-130,25){{
+\backslash
+scriptsize
+\backslash
+color{blue}$
+\backslash
+mathbf{U}_{1}^{1}$}} 
+\backslash
+put(-45,25){{
+\backslash
+scriptsize
+\backslash
+color{blue}$
+\backslash
+mathbf{U}_{1}^{r_
+\backslash
+mathbf{U}}$}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-105,61){{
+\backslash
+scriptsize
+\backslash
+color{red}$
+\backslash
+mathbf{U}_{2}^{1}$}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-20,61){{
+\backslash
+scriptsize
+\backslash
+color{red}$
+\backslash
+mathbf{U}_{2}^{r_
+\backslash
+mathbf{U}}$}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-107,77){{
+\backslash
+scriptsize$
+\backslash
+mathbf{U}_{3}^{1}$}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+put(-26,77){{
+\backslash
+scriptsize$
+\backslash
+mathbf{U}_{3}^{r_
+\backslash
+mathbf{U}}$}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{-.5in}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\mathbf{U}=\sum_{l=1}^{r_{\mathbf{U}}}s_{l}^{\mathbf{U}}\mathbf{U}_{0}^{l}\otimes\mathbf{U}_{1}^{l}\otimes\dots\otimes\mathbf{U}_{d}^{l},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\otimes$
+\end_inset
+
+ denotes the vector outer product and,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $r_{\mathbf{U}}$
+\end_inset
+
+ is the separation rank of 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $d$
+\end_inset
+
+ is the number of dimensions.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $s_{l}$
+\end_inset
+
+ are normalization constants s.t.
+ 
+\begin_inset Formula $\left\Vert \mathbf{U}_{j}^{l}\right\Vert _{2}=1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Applications of CTDs and separated representations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+psychometrics
+\end_layout
+
+\begin_layout Itemize
+chemometrics
+\end_layout
+
+\begin_layout Itemize
+multivariate regression and machine learning
+\end_layout
+
+\begin_layout Itemize
+uncertainty quantification
+\end_layout
+
+\begin_layout Itemize
+...
+ and many more
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small{Kolda and Bader (2009)}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CTDs: operations and storage 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{red}{Standard operations with and storage of CTDs are linear in
+ $d$}
+\end_layout
+
+\end_inset
+
+, provided that the separation rank is independent of 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+bigskip{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{>{
+\backslash
+raggedright}m{0.21
+\backslash
+textwidth}|>{
+\backslash
+raggedright}m{0.53
+\backslash
+textwidth}|>{
+\backslash
+raggedright}m{0.21
+\backslash
+textwidth}} 
+\backslash
+textbf{
+\backslash
+small Operation} & 
+\backslash
+textbf{
+\backslash
+small Definition in canonical format} & 
+\backslash
+textbf{
+\backslash
+small Cost}
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline   
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{black}{
+\backslash
+small Storage} & {
+\backslash
+footnotesize $
+\backslash
+mathbf{U}=
+\backslash
+sum_{l=1}^{r_{
+\backslash
+mathbf{U}}}s_{l}
+\backslash
+bigotimes_{j=1}^{d}
+\backslash
+mathbf{U}_{j}^{l}$} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}({
+\backslash
+color{red}d}
+\backslash
+cdot r_{
+\backslash
+mathbf{U}}
+\backslash
+cdot N)$}
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & 
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small Inner product} & {
+\backslash
+footnotesize $
+\backslash
+left
+\backslash
+langle 
+\backslash
+mathbf{U},
+\backslash
+mathbf{V}
+\backslash
+right
+\backslash
+rangle =
+\backslash
+sum_{l=1}^{r_{
+\backslash
+mathbf{U}}}
+\backslash
+sum_{m=1}^{r_{
+\backslash
+mathbf{V}}}s_{l}^{
+\backslash
+mathbf{U}}s_{m}^{
+\backslash
+mathbf{V}}
+\backslash
+prod_{j=1}^{d}
+\backslash
+left
+\backslash
+langle 
+\backslash
+mathbf{U}_{j}^{l},
+\backslash
+mathbf{V}_{j}^{m}
+\backslash
+right
+\backslash
+rangle $} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}({
+\backslash
+color{red}d}
+\backslash
+cdot r_{
+\backslash
+mathbf{U}}
+\backslash
+cdot r_{
+\backslash
+mathbf{V}}
+\backslash
+cdot N)$}
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small Frobenius norm} & {
+\backslash
+footnotesize $
+\backslash
+left
+\backslash
+Vert 
+\backslash
+mathbf{U}
+\backslash
+right
+\backslash
+Vert _{F}^{2}=
+\backslash
+left
+\backslash
+langle 
+\backslash
+mathbf{U},
+\backslash
+mathbf{U}
+\backslash
+right
+\backslash
+rangle $} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}({
+\backslash
+color{red}d}
+\backslash
+cdot r_{
+\backslash
+mathbf{U}}^{2}
+\backslash
+cdot N)$}
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & 
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small ``Matrix-vector'' multiply} & {
+\backslash
+footnotesize $
+\backslash
+mathbb{A}
+\backslash
+mathbf{U}=
+\backslash
+sum_{l=1}^{r_{
+\backslash
+mathbb{A}}}
+\backslash
+sum_{m=1}^{r_{
+\backslash
+mathbf{U}}}s_{l}^{
+\backslash
+mathbb{A}}s_{m}^{
+\backslash
+mathbf{U}}
+\backslash
+bigotimes_{j=1}^{d}A_{j}^{l}
+\backslash
+mathbf{U}_{j}^{m}$} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}({
+\backslash
+color{red}{
+\backslash
+color{red}}d}
+\backslash
+cdot r_{A}
+\backslash
+cdot r_{
+\backslash
+mathbf{U}}
+\backslash
+cdot N^{2})$}
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\backslash
+bigskip{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Operations on CTDs
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Many operations on CTDs and SRs increase the rank of the representation.
+ Let
+\begin_inset Formula 
+\[
+\mathbf{U}=\sum_{l=1}^{r_{\mathbf{U}}}s_{l}^{\mathbf{U}}\mathbf{U}_{1}^{l}\otimes\dots\otimes\mathbf{U}_{d}^{l}\,\,\,\,\textrm{and}\,\,\,\,\mathbf{V}=\sum_{m=1}^{r_{\mathbf{V}}}s_{m}^{\mathbf{V}}\mathbf{V}_{1}^{m}\otimes\dots\otimes\mathbf{V}_{d}^{m}
+\]
+
+\end_inset
+
+denote CTDs with 
+\begin_inset Formula $\mathbf{U}_{k}^{l},\mathbf{V}_{k}^{m}\in\mathbb{R}^{M_{k}}$
+\end_inset
+
+.
+ Then:
+\end_layout
+
+\begin_layout Itemize
+The sum of 
+\begin_inset Formula $\mathbf{U}+\mathbf{V}$
+\end_inset
+
+ has rank 
+\begin_inset Formula $r_{\mathbf{U}}+r_{\mathbf{V}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+The Hadamard product 
+\begin_inset Formula $\mathbf{U}*\mathbf{V}$
+\end_inset
+
+ has rank 
+\begin_inset Formula $r_{\mathbf{U}}r_{\mathbf{V}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Application of a 
+\begin_inset Formula $d$
+\end_inset
+
+-dimensional operator of rank 
+\begin_inset Formula $r_{\mathbb{A}}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbb{A}\mathbf{U}$
+\end_inset
+
+, has rank 
+\begin_inset Formula $r_{\mathbb{A}}r_{\mathbf{U}}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Rank reduction
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Since many operations in separated form increase the rank, we require a
+ rank reduction algorithm.
+ Specifically, given 
+\begin_inset Formula $\mathbf{G}$
+\end_inset
+
+, 
+\begin_inset Formula 
+\[
+\mathbf{G}=\sum_{l=1}^{r_{\mathbf{G}}}s_{l}^{\mathbf{G}}\mathbf{G}_{1}^{l}\circ\dots\circ\mathbf{G}_{d}^{l},
+\]
+
+\end_inset
+
+and an acceptable error 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+, we attempt to find a representation 
+\begin_inset Formula 
+\[
+\mathbf{F}=\sum_{\tilde{l}=1}^{r_{\mathbf{F}}}s_{\tilde{l}}^{\mathbf{F}}\mathbf{F}_{1}^{\tilde{l}}\circ\dots\circ\mathbf{F}_{d}^{\tilde{l}}
+\]
+
+\end_inset
+
+with 
+\begin_inset Formula $r_{\mathbf{F}}<r_{\mathbf{G}}$
+\end_inset
+
+, such that 
+\begin_inset Formula $\left\Vert \mathbf{F}-\mathbf{G}\right\Vert /\left\Vert \mathbf{G}\right\Vert <\epsilon$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+ALS for three directions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure} 
+\backslash
+begin{center} 
+\backslash
+includegraphics[trim = 0mm 0mm 0mm 2mm, clip, width=3.46in]{als_chart_s.eps}
+         
+\backslash
+put(-152,227){
+\backslash
+scriptsize Init $r_{
+\backslash
+bm{U}}=1$,${
+\backslash
+color{blue}
+\backslash
+bm{U}_{0}^{l}},{
+\backslash
+color{red}
+\backslash
+bm{U}_{1}^{l}},{
+\backslash
+color{black}
+\backslash
+bm{U}_{2}^{l}}$}       
+\backslash
+put(-205,186){
+\backslash
+scriptsize for $k=1,
+\backslash
+cdots$ (until convergence)}       
+\backslash
+put(-185,168){
+\backslash
+scriptsize $
+\backslash
+displaystyle 
+\backslash
+min_{
+\backslash
+color{blue}
+\backslash
+bm{U}_{0}^{l},
+\backslash
+,l=1,
+\backslash
+cdots,r_{
+\backslash
+bm{U}}}
+\backslash
+left
+\backslash
+Vert 
+\backslash
+sum_{l=1}^{r_{
+\backslash
+bm{U}}}s_{l}^{
+\backslash
+bm{U}}{
+\backslash
+color{blue}
+\backslash
+bm{U}_{0}^{l}}
+\backslash
+otimes{
+\backslash
+color{red}{
+\backslash
+bm{U}}_{1}^{l}}
+\backslash
+otimes{
+\backslash
+color{black}{
+\backslash
+bm{U}}_{2}^{l}}-
+\backslash
+bm{V}
+\backslash
+right
+\backslash
+Vert_{F}$}       
+\backslash
+put(-185,138){
+\backslash
+scriptsize $
+\backslash
+displaystyle 
+\backslash
+min_{
+\backslash
+color{red}
+\backslash
+bm{U}_{1}^{l},
+\backslash
+,l=1,
+\backslash
+cdots,r_{
+\backslash
+bm{U}}}
+\backslash
+left
+\backslash
+Vert 
+\backslash
+sum_{l=1}^{r_{
+\backslash
+bm{U}}}s_{l}^{
+\backslash
+bm{U}}{
+\backslash
+color{blue}
+\backslash
+bm{U}_{0}^{l}}
+\backslash
+otimes{
+\backslash
+color{red}{
+\backslash
+bm{U}}_{1}^{l}}
+\backslash
+otimes{
+\backslash
+color{black}{
+\backslash
+bm{U}}_{2}^{l}}-
+\backslash
+bm{V}
+\backslash
+right
+\backslash
+Vert_{F}$}       
+\backslash
+put(-185,108){
+\backslash
+scriptsize $
+\backslash
+displaystyle 
+\backslash
+min_{
+\backslash
+color{black}
+\backslash
+bm{U}_{2}^{l},
+\backslash
+,l=1,
+\backslash
+cdots,r_{
+\backslash
+bm{U}}}
+\backslash
+left
+\backslash
+Vert 
+\backslash
+sum_{l=1}^{r_{
+\backslash
+bm{U}}}s_{l}^{
+\backslash
+bm{U}}{
+\backslash
+color{blue}
+\backslash
+bm{U}_{0}^{l}}
+\backslash
+otimes{
+\backslash
+color{red}{
+\backslash
+bm{U}}_{1}^{l}}
+\backslash
+otimes{
+\backslash
+color{black}{
+\backslash
+bm{U}}_{2}^{l}}-
+\backslash
+bm{V}
+\backslash
+right
+\backslash
+Vert_{F}$}        
+\backslash
+put(-138,35){
+\backslash
+scriptsize $
+\backslash
+displaystyle 
+\backslash
+Vert 
+\backslash
+bm{U}- 
+\backslash
+bm{V}
+\backslash
+Vert_{F}
+\backslash
+leq$}        
+\backslash
+put(-127,22){
+\backslash
+scriptsize $
+\backslash
+displaystyle 
+\backslash
+epsilon
+\backslash
+Vert
+\backslash
+bm{V}
+\backslash
+Vert_{F}$}              
+\backslash
+put(-205,88){
+\backslash
+scriptsize end}       
+\backslash
+put(-190,40){
+\backslash
+scriptsize 
+\backslash
+textbf{no}}         
+\backslash
+put(-67,40){
+\backslash
+scriptsize 
+\backslash
+textbf{yes}}          
+\backslash
+put(-37,31){
+\backslash
+scriptsize 
+\backslash
+textbf{END}}                            
+\backslash
+put(-241.5,31){
+\backslash
+scriptsize $r_{
+\backslash
+bm{U}}=r_{
+\backslash
+bm{U}}+1$}       
+\backslash
+vspace{-.4cm}             
+\backslash
+label{fig:als_chart} 
+\backslash
+end{center} 
+\backslash
+end{figure} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Introduction to the discrete tensor-train decomposition
+\end_layout
+
+\begin_layout Subsection
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+CTD limitations and the Tucker decomposition
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Unfortunately, unlike the SVD, the best rank 
+\begin_inset Formula $r$
+\end_inset
+
+ CTD approximation to a tensor does not always exist (space of rank 
+\begin_inset Formula $r$
+\end_inset
+
+ tensors isn't closed).
+\end_layout
+
+\begin_layout Itemize
+Computations of CTDs based on ALS algorithms don't always find a global
+ minimum in terms of approximation error.
+\end_layout
+
+\begin_layout Itemize
+A different tensor decomposition, the Tucker decomposition,
+\begin_inset Formula 
+\[
+\mathbf{U}=\sum_{l_{1}=1}^{r_{\mathbf{1}}}\dots\sum_{l_{d}=1}^{r_{\mathbf{d}}}s_{l_{1},\dots,l_{d}}\mathbf{U}_{1}^{l_{1}}\otimes\dots\otimes\mathbf{U}_{d}^{l_{d}}
+\]
+
+\end_inset
+
+does not suffer from the 
+\begin_inset Quotes eld
+\end_inset
+
+closure problem.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Curse of Dimensionality again: number of 
+\begin_inset Formula $s_{l_{1},\dots l_{d}}$
+\end_inset
+
+ grows exponentially with 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Hierarchical Tucker and Tensor-Train 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A variant of the Tucker decomposition, the Heirarchical Tucker decomposition,
+ addresses the Curse of Dimensionality problem.
+\end_layout
+
+\begin_layout Itemize
+Tensor Train (TT) is a particular type of Heirarchical Tucker decomposition,
+ and is defined as follows: 
+\end_layout
+
+\begin_layout Definition
+Let 
+\begin_inset Formula $\mathbf{U}\in\mathbb{R}^{N_{1},\dots,N_{d}}$
+\end_inset
+
+ have entries 
+\begin_inset Formula $\mathbf{U}\left(i_{i},\dots,i_{d}\right)$
+\end_inset
+
+.
+ The tensor-train rank 
+\begin_inset Formula $\mathbf{r}=\left(r_{0},\dots,r_{d}\right)$
+\end_inset
+
+ approximation of 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{U}_{TT}\in\mathbb{R}^{N_{1},\dots,N_{d}},$
+\end_inset
+
+ is defined as 
+\begin_inset Formula 
+\begin{eqnarray*}
+\mathbf{U}\left(i_{1},\dots,i_{d}\right) & = & \mathbf{U}_{TT}\left(i_{i},\dots,i_{d}\right)+\mathbf{\epsilon}_{TT}\left(i_{i},\dots,i_{d}\right)\\
+ & = & \sum_{\alpha_{0},\dots,\alpha_{d}}^{\mathbf{r}}G_{1}\left(\alpha_{0},i_{1},\alpha_{1}\right)\dots G_{d}\left(\alpha_{d-1},i_{d},\alpha_{d}\right)\\
+ &  & \,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,+\mathbf{\epsilon}_{TT}\left(i_{i},\dots,i_{d}\right),
+\end{eqnarray*}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{\epsilon}_{TT}$
+\end_inset
+
+ is the residual term and 
+\begin_inset Formula $r_{0}=r_{d}=1$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Cost comparison: Tensor-Train vs.
+ CTD 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+Comparison of operations, assuming all directional samples are all 
+\begin_inset Formula $\mathcal{O}\left(N\right)$
+\end_inset
+
+ and all ranks 
+\begin_inset Formula $r_{k}$
+\end_inset
+
+ are 
+\begin_inset Formula $\mathcal{O}\left(r\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+bigskip{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{>{
+\backslash
+raggedright}m{0.21
+\backslash
+textwidth}|>{
+\backslash
+raggedright}m{0.21
+\backslash
+textwidth}|>{
+\backslash
+raggedright}m{0.21
+\backslash
+textwidth}} 
+\backslash
+textbf{
+\backslash
+small Operation} & 
+\backslash
+textbf{
+\backslash
+small TT cost} & 
+\backslash
+textbf{
+\backslash
+small CTD cost}
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline   
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textcolor{black}{
+\backslash
+small Storage} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d 
+\backslash
+cdot  r^2 
+\backslash
+cdot N)$} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d
+\backslash
+cdot r 
+\backslash
+cdot N)$}
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & 
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small Inner product} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d 
+\backslash
+cdot  r^4 
+\backslash
+cdot N) $} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d 
+\backslash
+cdot r^2
+\backslash
+cdot N)$}
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small Frobenius norm} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d 
+\backslash
+cdot  r^4 
+\backslash
+cdot N)$} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d 
+\backslash
+cdot r^2
+\backslash
+cdot N)$}
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+ &  & 
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small ``Matrix-vector'' multiply} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d 
+\backslash
+cdot r^4 
+\backslash
+cdot N^{2})$} & {
+\backslash
+footnotesize $
+\backslash
+mathcal{O}(d 
+\backslash
+cdot r^2 
+\backslash
+cdot N^{2})$}
+\backslash
+tabularnewline 
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}%
+\backslash
+bigskip{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+Note: if 
+\begin_inset Formula $r_{k}=\mathcal{O}(r)$
+\end_inset
+
+ 
+\begin_inset Formula $\forall k$
+\end_inset
+
+, then the inner product and Frobenius norm can be computed from the TT
+ format in 
+\begin_inset Formula $\mathcal{O}\left(d\cdot r^{3}\cdot N\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Properties of Tensor-Train 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+There exists an exact TT representation (
+\begin_inset Formula $\mathbf{\epsilon}_{TT}=0$
+\end_inset
+
+) for which
+\begin_inset Formula 
+\[
+r_{k}={\textstyle rank}\left(\mathbf{U}_{k}\right),\,\,\,\,\forall k\in\left\{ 1,\dots,d\right\} ,
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{U}_{k}$
+\end_inset
+
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $k$
+\end_inset
+
+-th unfolding of 
+\begin_inset Formula $\mathbf{U}$
+\end_inset
+
+,
+\begin_inset Quotes erd
+\end_inset
+
+ i.e.
+\begin_inset Formula 
+\[
+\mathbf{U}_{k}={\textstyle reshape}\left(\mathbf{U},\prod_{s=1}^{k}N_{s},\prod_{s=k+1}^{d}N_{s}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+If 
+\begin_inset Formula $r_{k}\le{\textstyle rank}\left(\mathbf{U}_{k}\right)$
+\end_inset
+
+, a best TT rank 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ approximation 
+\begin_inset Formula $\mathbf{U}^{best}$
+\end_inset
+
+ always exists.
+ 
+\end_layout
+
+\begin_layout Itemize
+The TT-SVD algorithm [Oseledets, 2011] outputs an approximation to 
+\begin_inset Formula $\mathbf{U}^{best}$
+\end_inset
+
+ s.t.
+\begin_inset Formula 
+\[
+\left\Vert \mathbf{U}_{TT}-\mathbf{U}\right\Vert _{F}\le\sqrt{d-1}\left\Vert \mathbf{U}^{best}-\mathbf{U}\right\Vert _{F}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Properties of Tensor-Train cont'd 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+If the truncation tolerance for the SVD of each unfolding is set to 
+\begin_inset Formula $\delta=\epsilon/\sqrt{d-1}\left\Vert \mathbf{U}\right\Vert _{F}$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\left\Vert \mathbf{U}_{TT}-\mathbf{U}\right\Vert _{F}\le\epsilon\left\Vert \mathbf{U}\right\Vert _{F}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Complexity of the TT-SVD, assuming 
+\begin_inset Formula $r_{k}=r$
+\end_inset
+
+ and 
+\begin_inset Formula $N_{k}=N$
+\end_inset
+
+: 
+\begin_inset Formula $\mathcal{O}\left(rN^{d}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Curse of Dimensionality, yet again!
+\end_layout
+
+\begin_layout Itemize
+A method for constructing TT approximations with only a small number of
+ 
+\begin_inset Quotes eld
+\end_inset
+
+function evaluations
+\begin_inset Quotes erd
+\end_inset
+
+ is required.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+TT-DMRG-cross
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The TT-DMRG-cross approach solves,
+\begin_inset Formula 
+\[
+\textrm{min}_{G_{1}\dots G_{d}}\left\Vert \mathbf{U}-\mathbf{U}_{TT}\right\Vert ,
+\]
+
+\end_inset
+
+by optimizing over two cores, 
+\begin_inset Formula $G_{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{k+1}$
+\end_inset
+
+, at the same time.
+ The important cores
+\begin_inset Formula 
+\[
+W_{k}\left(i_{k},i_{k+1}\right)=G_{k}\left(i_{k}\right)G_{k+1}\left(i_{k+1}\right),
+\]
+
+\end_inset
+
+are found using the maximum volume principle and 
+\begin_inset Formula $G_{k}$
+\end_inset
+
+, 
+\begin_inset Formula $G_{k+1}$
+\end_inset
+
+ are recovered via the SVD.
+ 
+\end_layout
+
+\begin_layout Block
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+Remarks
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Block
+This is accomplished by selecting the most important 
+\emph on
+planes
+\emph default
+ 
+\begin_inset Formula $\mathbf{U}\left(i_{1},\dots,i_{k-1},:,:,i_{k+2},\dots,i_{d}\right)$
+\end_inset
+
+ in the 
+\begin_inset Formula $d$
+\end_inset
+
+-dimensional space.
+ This process is rank revealing.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Functional approximations
+\end_layout
+
+\begin_layout Subsection
+Building a SR from function samples
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional approximations in separated form
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A method for generating separated representations from scattered data was
+ introduced by [Beylkin et.
+ al 2009].
+ To form the separated representation,
+\begin_inset Formula 
+\[
+g\left(\mathbf{x}\right)=\sum_{l=1}^{r}s_{l}\prod_{i=1}^{d}g_{i}\left(x_{i}\right),
+\]
+
+\end_inset
+
+a sequence of one dimensional problems are solved.
+ To form the one-dimensional subproblems compute,
+\begin_inset Formula 
+\[
+p_{j}^{l}=s_{l}\prod_{i=2}^{d}g_{i}^{l}\left(x_{i}^{j}\right),
+\]
+
+\end_inset
+
+for the sample indices 
+\begin_inset Formula $j$
+\end_inset
+
+ and rank terms 
+\begin_inset Formula $l$
+\end_inset
+
+ and minimize the residual
+\begin_inset Formula 
+\[
+\sum_{j=1}^{N}\left(y_{j}-\sum_{l=1}^{r}p_{j}^{l}g_{1}^{l}\left(x_{1}^{j}\right)\right)^{2},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+ is the 
+\begin_inset Formula $j$
+\end_inset
+
+-th data value.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Functional approximations in separated form continued
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+To solve the minimization problem (assuming 
+\begin_inset Formula $g$
+\end_inset
+
+'s are polynomials of fixed order) first form the standard Vandermonde matrix,
+ 
+\begin_inset Formula 
+\[
+V\left(i,j\right)=\phi_{i}\left(x_{j}\right),\,\,\,\, i=0,\dots,M\,\,\textrm{and}\,\, j=1,\dots,N,
+\]
+
+\end_inset
+
+then form the following block matrix,
+\begin_inset Formula 
+\[
+A=\left[P_{1}V,P_{2}V,\dots,P_{r}V\right],
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+P_{l}=\textrm{diag}\left(p_{1}^{l},\dots,p_{N-1}^{l}\right),
+\]
+
+\end_inset
+
+and solve the linear system,
+\begin_inset Formula 
+\[
+A\mathbf{c}=\mathbf{y},
+\]
+
+\end_inset
+
+for the coefficients of 
+\begin_inset Formula $g_{1}^{l}\left(x_{1}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $l=1,\dots r$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Remarks on functional approximations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+This residual is then minimized for the other directions, 
+\begin_inset Formula $i=2,\dots d$
+\end_inset
+
+, similar to an ALS sweep.
+ 
+\end_layout
+
+\begin_layout Itemize
+If the error is not sufficiently small, perform another sweep.
+\end_layout
+
+\begin_layout Itemize
+If the sweeps are not changing the error by a significant amount, increase
+ the rank 
+\begin_inset Formula $r$
+\end_inset
+
+ and continue sweeps
+\end_layout
+
+\begin_layout Itemize
+The functions 
+\begin_inset Formula $g_{i}$
+\end_inset
+
+ are typically of some predetermined form, e.g.
+ polynomials of fixed order (see [Beylkin et al.
+ 2009] and [Doostan et al.
+ 2013]), but there are other posibilities (wavelets, exponentials, Gaussians,
+ rational functions, etc.).
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Subsection
+Building a SR via Tensor Train
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sketch of the functional approximation algorithms using TT
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+The idea behind using tensor-train to generate functional representations
+ is to,
+\end_layout
+
+\begin_layout Enumerate
+Construct a tensor product grid from Gaussian quadratures.
+\end_layout
+
+\begin_layout Enumerate
+Evaluate the weighted target function 
+\begin_inset Formula $f$
+\end_inset
+
+ at the quadrature points; this forms a tensor 
+\begin_inset Formula $\mathbf{B}=f\left(\mathbf{X}\right)\sqrt{\mathbf{W}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Approximate the tensor 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ with a tensor train approximation,
+\begin_inset Formula 
+\[
+\left\Vert \mathbf{B}-\mathbf{B}_{TT}\right\Vert _{F}\le\epsilon\left\Vert \mathbf{B}\right\Vert _{F},
+\]
+
+\end_inset
+
+for this step use either TT-SVD, TT-cross, or TT-DMRG-cross.
+\end_layout
+
+\begin_layout Enumerate
+The TT cores of 
+\begin_inset Formula $\mathbf{B}_{TT}$
+\end_inset
+
+ are used as a discretized version of the cores of the functional tensor-train,
+ automatically leading to the following approximation of 
+\begin_inset Formula $f$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\left\Vert f-f_{TT}\right\Vert _{L_{\mu}^{2}}\lesssim\epsilon\left\Vert f\right\Vert _{L_{\mu}^{2}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Sketch of the functional approximation algorithms using TT
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+From the functional tensor-train approximation of 
+\begin_inset Formula $f$
+\end_inset
+
+, 
+\begin_inset Formula $f_{TT}$
+\end_inset
+
+, there are two options:
+\end_layout
+
+\begin_layout Itemize
+Project 
+\begin_inset Formula $f_{TT}$
+\end_inset
+
+ onto a polynomial basis.
+\end_layout
+
+\begin_layout Itemize
+Use 
+\begin_inset Formula $f_{TT}$
+\end_inset
+
+ to generate a Lagrange interpolation from candidate points.
+\end_layout
+
+\begin_layout Standard
+To get to these options let us first understand the connection between 
+\begin_inset Formula $\mathbf{B}_{TT}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{TT}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $f_{TT}$
+\end_inset
+
+ is defined as,
+\begin_inset Formula 
+\[
+f_{TT}\left(\mathbf{x}\right):=\sum_{\alpha_{0},\dots,\alpha_{d}}^{\mathbf{r}}\gamma_{1}\left(\alpha_{0},x_{1},\alpha_{1}\right)\dots\gamma_{d}\left(\alpha_{d-1},x_{d},\alpha_{d}\right).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Relationship between the DTT and FTT
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{TT}\left(\mathbf{x}\right):=\sum_{\alpha_{0},\dots,\alpha_{d}}^{\mathbf{r}}\gamma_{1}\left(\alpha_{0},x_{1},\alpha_{1}\right)\dots\gamma_{d}\left(\alpha_{d-1},x_{d},\alpha_{d}\right).
+\]
+
+\end_inset
+
+And recalling that the tensor 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+, approximated by 
+\begin_inset Formula $\mathbf{B}_{TT}$
+\end_inset
+
+, was generated from weighted samples of 
+\begin_inset Formula $f$
+\end_inset
+
+,
+\begin_inset Formula 
+\[
+\mathbf{A}_{TT}=\mathbf{B}_{TT}/\sqrt{\mathbf{W}}=\sum_{\alpha_{0},\dots,\alpha_{d}}^{\mathbf{r}}G_{1}\left(\alpha_{0},i_{1},\alpha_{1}\right)\dots G_{d}\left(\alpha_{d-1},i_{d},\alpha_{d}\right)
+\]
+
+\end_inset
+
+is 
+\begin_inset Formula $f_{TT}$
+\end_inset
+
+ evaluated on the tensor product grid of quadrature nodes.
+ From these samples it is straightforward to,
+\end_layout
+
+\begin_layout Itemize
+compute projections onto polynomial bases.
+\end_layout
+
+\begin_layout Itemize
+use linear or Lagrange interpolation.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Projection onto polynomial bases
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+To compute the projection 
+\begin_inset Formula $P_{\mathbf{N}}f_{TT}=\sum_{\mathbf{i}=0}^{\mathbf{N}}\tilde{c}_{\mathbf{i}}\Phi_{\mathbf{i}}$
+\end_inset
+
+ evaluate,
+\begin_inset Formula 
+\[
+\tilde{c}_{\mathbf{i}}=\int_{\mathbf{I}}f_{TT}\left(\mathbf{x}\right)\Phi_{\mathbf{i}}\left(\mathbf{x}\right)d\mu\left(\mathbf{x}\right)=\sum_{\alpha_{0},\dots,\alpha_{d}=1}^{\mathbf{r}}\beta_{1}\left(\alpha_{0},i_{1},\alpha_{1}\right)\dots\beta_{d}\left(\alpha_{d-1},i_{d},\alpha_{d}\right),
+\]
+
+\end_inset
+
+where
+\begin_inset Formula 
+\[
+\beta_{n}\left(\alpha_{n-1},i_{n},\alpha_{n}\right)=\int_{I_{n}}\gamma\left(\alpha_{n-1},x_{n},\alpha_{n}\right)\phi_{i_{n}}\left(x_{n}\right)d\mu_{n}\left(x_{n}\right).
+\]
+
+\end_inset
+
+Discretizing this integral via Gaussian quadrature yields,
+\begin_inset Formula 
+\[
+\beta_{n}\left(\alpha_{n-1},i_{n},\alpha_{n}\right)\approx\hat{\beta}_{n}\left(\alpha_{n-1},i_{n},\alpha_{n}\right)=\sum_{j=0}^{N_{n}}\gamma_{n}\left(\alpha_{n-1},x_{n}^{\left(j\right)},\alpha_{n}\right)w_{n}^{\left(j\right)},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left(x_{n}^{\left(j\right)},w_{n}^{\left(j\right)}\right),\,\, j=0,\dots,N_{n}$
+\end_inset
+
+, are Gaussian quadrature nodes and weights.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename alg1.tiff
+	scale 51
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename alg2.tiff
+	scale 51
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Interpolation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Define the hat function,
+\begin_inset Formula 
+\[
+e_{i}\left(x\right)=\begin{cases}
+\frac{x-x_{i-1}}{x_{i}-x_{i-1}} & \textrm{if }x_{i-1}\le x\le x_{i}\,\, and\,\, x\ge a,\\
+\frac{x-x_{i+1}}{x_{i}-x_{i+1}} & \textrm{if }x_{i}\le x\le x_{i+1}\,\, and\,\, x\le b,\\
+0 & \textrm{otherwise.}
+\end{cases}
+\]
+
+\end_inset
+
+The multilinear interpolation operator is defined as,
+\begin_inset Formula 
+\[
+I_{N}f\left(\mathbf{x}\right)=\sum_{\mathbf{i}=0}^{\mathbf{N}}\hat{c}_{\mathbf{i}}e_{\mathbf{i}}\left(\mathbf{x}\right),\,\,\,\,\,\,\,\,\hat{c}_{\mathbf{i}}=f\left(\mathbf{x}_{\mathbf{i}}\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\left\{ \mathbf{x}_{\mathbf{i}}\right\} _{\mathbf{i}=0}^{\mathbf{N}}=\left\{ x_{i}^{1}\right\} _{i=0}^{N_{1}}\times\dots\times\left\{ x_{i}^{d}\right\} _{i=0}^{N_{d}}$
+\end_inset
+
+ is a tensor grid of points.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename alg3.tiff
+	scale 51
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Section
+Numerical examples
+\end_layout
+
+\begin_layout Subsection
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Numerical examples: Genz functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename genz.tiff
+	scale 51
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathbf{w}$
+\end_inset
+
+ are drawn uniformly from 
+\begin_inset Formula $\left[0,1\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Classically, 
+\begin_inset Formula $\mathbf{c}$
+\end_inset
+
+ are drawn uniformly from 
+\begin_inset Formula $\left[0,1\right]$
+\end_inset
+
+ and then are normalized.
+ In this paper this normalization is not performed.
+ 
+\end_layout
+
+\begin_layout Itemize
+Relative 
+\begin_inset Formula $L^{2}$
+\end_inset
+
+ errors are computed via,
+\begin_inset Formula 
+\[
+e_{rel}:=\left\Vert f-\mathcal{L}f_{TT}\right\Vert _{L_{\mu}^{2}\left(\mathbf{I}\right)}/\left\Vert f\right\Vert _{L_{\mu}^{2}\left(\mathbf{I}\right)},
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ is either the projection or interpolation operator.
+ Integrals were evaluated via Monte Carlo, with samples drawn until relative
+ error of 
+\begin_inset Formula $e_{rel}$
+\end_inset
+
+ was less than 
+\begin_inset Formula $10^{-2}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+L2 error vs.
+ # of function evaluations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename l1err_genz.tiff
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+L2 error vs.
+ # of function evaluations cont'd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename l1err_genz_2.tiff
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+# of function evaluations vs.
+ order
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename feval_genz.tiff
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+# of function evaluations vs.
+ order cont'd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename feval_genz2.tiff
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Linear interpolation of Genz functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename interp_genz.tiff
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elliptic PDE with random coefficient
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+-\nabla\cdot(\kappa(\mathbf{x},\omega)\nabla u(\mathbf{x},\omega)) & = & 1,\quad\textrm{in }\Gamma\times\Omega,\\
+u(\mathbf{x},\omega) & = & 0,\quad\textrm{on }\delta\Gamma\times\Omega,
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+defined on the unit square 
+\begin_inset Formula $\Gamma=(0,1)\times(0,1)$
+\end_inset
+
+ with boundary 
+\begin_inset Formula $\partial\Gamma$
+\end_inset
+
+.
+ The diffusion coefficient 
+\begin_inset Formula $\kappa(\mathbf{x},\mathbf{z})$
+\end_inset
+
+ is a log-normal random field defined on the probability space 
+\begin_inset Formula $\left(\Omega,\Sigma,\mu\right)$
+\end_inset
+
+ by
+\begin_inset Formula 
+\[
+\kappa(\mathbf{x},\mathbf{z})=\exp\left(g\left(\mathbf{x},\omega\right)\right),\,\,\,\, g\left(\mathbf{x},\omega\right)\sim\mathcal{N}\left(\mathbf{0},C_{g}\left(\mathbf{x},\mathbf{x}^{\prime}\right)\right).
+\]
+
+\end_inset
+
+
+\begin_inset Formula $g$
+\end_inset
+
+ is characterized by the covariance kernel
+\begin_inset Formula 
+\[
+C_{g}\left(\mathbf{x},\mathbf{x}^{\prime}\right)=\int_{\Omega}g\left(\mathbf{x},\omega\right)g\left(\mathbf{x}^{\prime},\omega\right)d\mu\left(\omega\right)=\sigma^{2}\exp\left(-\frac{\left\Vert \mathbf{x}-\mathbf{x}^{\prime}\right\Vert ^{2}}{2l^{2}}\right)
+\]
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+g\left(\mathbf{x},\omega\right)=\sum_{i=1}^{\infty}\sqrt{\zeta_{k}}\chi_{i}(\mathbf{x})Y_{i}\left(\omega\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{z}=(z_{1},\dots,z_{d})$
+\end_inset
+
+ and the random variables 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+ are independent and uniformly distributed over the interval 
+\begin_inset Formula $[-1,1]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elliptic PDE with random coefficient cont'd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Frame
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+where 
+\begin_inset Formula $l>0$
+\end_inset
+
+ is the spatial correlation length.
+ The random field is decomposed via the KL expansion,
+\begin_inset Formula 
+\[
+g\left(\mathbf{x},\omega\right)=\sum_{i=1}^{\infty}\sqrt{\zeta_{k}}\chi_{i}(\mathbf{x})Y_{i}\left(\omega\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $Y_{i}\sim\mathcal{N}\left(0,1\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ \lambda_{i},\chi_{i}\left(\mathbf{x}\right)\right\} _{i=1}^{\infty}$
+\end_inset
+
+ are eigenpairs of 
+\begin_inset Formula 
+\[
+\int_{\Gamma}C_{g}\left(\mathbf{x},\mathbf{x}^{\prime}\right)\chi_{i}\left(\mathbf{x}^{\prime}\right)d\mathbf{x}^{\prime}=\lambda_{i}\chi_{i}\left(\mathbf{x}\right).
+\]
+
+\end_inset
+
+In this example 
+\begin_inset Formula $d=12$
+\end_inset
+
+ s.t.
+ 
+\begin_inset Formula $\sum_{i=1}^{d}\lambda_{i}\ge.95\sigma^{2},$
+\end_inset
+
+ 
+\begin_inset Formula $l=0.25$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma^{2}=0.1$
+\end_inset
+
+, and we approximate 
+\begin_inset Formula $u\left(\mathbf{x}_{0},\mathbf{y}\right)$
+\end_inset
+
+ at 
+\begin_inset Formula $\mathbf{x}_{0}=\left(0.75,0.25\right)$
+\end_inset
+
+.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+g\left(\mathbf{x},\omega\right)=\sum_{i=1}^{\infty}\sqrt{\zeta_{k}}\chi_{i}(\mathbf{x})Y_{i}\left(\omega\right),
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{z}=(z_{1},\dots,z_{d})$
+\end_inset
+
+ and the random variables 
+\begin_inset Formula $z_{k}$
+\end_inset
+
+ are independent and uniformly distributed over the interval 
+\begin_inset Formula $[-1,1]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout PlainFrame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Elliptic PDE with random coefficient cont'd
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename elliptic_rand_ex.tiff
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Convergence of the FTT-projection of hermite polynomial basis functions
+ of orders 
+\begin_inset Formula $0,\,\,1,\,\,3,\,\,7$
+\end_inset
+
+ for different target accuracies.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\begin_layout Frame
+\begin_inset Argument 4
+status open
+
+\begin_layout Plain Layout
+Tensor toolbox
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Open source STT approximation algorithm:
+\end_layout
+
+\begin_layout Standard
+http://pypi.python.org/pypi/TensorToolbox/
+\end_layout
+
+\end_deeper
+\begin_layout Separator
+
+\end_layout
+
+\end_body
+\end_document
